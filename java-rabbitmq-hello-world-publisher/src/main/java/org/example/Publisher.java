@@ -4,13 +4,14 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
-public class NewTask {
+public class Publisher {
 
     private static final String QUEUE_NAME = "LOG";
+    private static final String HOST = "localhost";
 
     public static void main(String args[]) throws Exception {
         ConnectionFactory connectionFactory = new ConnectionFactory();
-        connectionFactory.setHost("localhost");
+        connectionFactory.setHost(HOST);
 
         try(
                 Connection connection = connectionFactory.newConnection();
